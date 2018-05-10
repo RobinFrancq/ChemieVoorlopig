@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-navbar class="pageHeader">
+      <button ion-button menuToggle>
+        <ion-icon name="menu" class="menuIcon"></ion-icon>
+      </button>
+      <ion-title class="pageTitle">Te maken Oefeningen</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-item-group *ngFor="let labo of openLabos" no-lines>
+      <ion-item-divider color="light">{{labo.laboNaam}} - tegen: {{labo.inleverDatum}}</ion-item-divider>
+      <ion-item *ngFor="let oefening of labo.oefeningen" no-lines>
+        <a (click)="openOefening(oefening)">{{oefening.oefeningNaam}}</a>
+      </ion-item>
+    </ion-item-group>
+    
+  </ion-content>
+  
